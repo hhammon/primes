@@ -84,11 +84,11 @@ sieve: # (long upper_bound)
 
 		# Mark all multiples of r8 as not prime
 		# rdx = r8 * 2
-		# r9 = r8 * 3
+		# r9 = r8 * r8
+		mov r9, r8
+		imul r9, r9
 		mov rdx, r8
 		add rdx, rdx
-		mov r9, rdx
-		add r9, r8
 
 		.loop_mark_sieve:
 			# Exit loop if upper_bound is exceeded
